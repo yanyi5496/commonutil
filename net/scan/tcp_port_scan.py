@@ -26,13 +26,13 @@ def port_scan(dest_ip: str):
 
 if __name__ == '__main__':
     threads = []
-    for port in range(1, 65535):
+    for port in range(10000, 20000):
         q.put(port)
-    for i in range(50):  # 控制线程的数量
+    for i in range(50):
         t = threading.Thread(target=port_scan, args=('101.204.168.219',))
         threads.append(t)
     for i in threads:
         i.start()
     for i in threads:
-        i.join()  # 将线程加入到主线程中
+        i.join()
     print(all_port)
