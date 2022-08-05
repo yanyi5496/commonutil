@@ -22,7 +22,7 @@ class EarthquakeSpider(scrapy.Spider):
     # start_urls = ['http://news.ceic.ac.cn/']
 
     def start_requests(self):
-        for i in range(1, 300):
+        for i in range(1, 100):
             print('The %dth page' % i)
             headers = {'user-agent': self.ua.random}
             yield scrapy.Request(
