@@ -28,7 +28,7 @@ def memory_issue():
     total = round(mem.total / 1024 / 1024, 2)  # round函数保留两位小数
     used = round(mem.used / 1024 / 1024, 2)
     percent = str(round(mem.used / mem.total * 100, 2)) + '%'
-    print(f'\ttotal: {total}, used: {used}, used%: {percent}')
+    print(f'\ttotal: {total}MB, used: {used}MB, used%: {percent}')
 
 
 def disk_issue():
@@ -57,7 +57,6 @@ def io_issue():
           f'\tread bytes: {io_r_bytes}\n'
           f'\twrite count: {io_w_count}\n'
           f'\twrite bytes: {io_w_bytes}')
-
 
 
 def cpu_issue():

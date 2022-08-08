@@ -1,0 +1,11 @@
+{
+  "title": "",
+  "host": "1",
+  "sender": "1",
+  "port": "1",
+  "password": "1",
+  "receivers": [
+    "2",
+    "2"
+  ]
+}
