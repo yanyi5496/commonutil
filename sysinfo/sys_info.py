@@ -48,15 +48,16 @@ def disk_issue():
 def io_issue():
     print("Disk I/O Info：")
     io_counter = ps.disk_io_counters(perdisk=True)
-    io_counter = io_counter.get('PhysicalDrive0')
-    io_r_count = io_counter.read_count
-    io_w_count = io_counter.write_count
-    io_r_bytes = '{0:.2f} MB'.format(io_counter.read_bytes / 1024 / 1024)
-    io_w_bytes = '{0:.2f} MB'.format(io_counter.write_bytes / 1024 / 1024)
-    print(f'\tread count: {io_r_count}\n'
-          f'\tread bytes: {io_r_bytes}\n'
-          f'\twrite count: {io_w_count}\n'
-          f'\twrite bytes: {io_w_bytes}')
+    for i in io_counter.keys():
+        io_counter = io_counter.get(i)
+        io_r_count = io_counter.read_count
+        io_w_count = io_counter.write_count
+        io_r_bytes = '{0:.2f} MB'.format(io_counter.read_bytes / 1024 / 1024)
+        io_w_bytes = '{0:.2f} MB'.format(io_counter.write_bytes / 1024 / 1024)
+        print(f'\tread count: {io_r_count}\n'
+              f'\tread bytes: {io_r_bytes}\n'
+              f'\twrite count: {io_w_count}\n'
+              f'\twrite bytes: {io_w_bytes}')
 
 
 def cpu_issue():
@@ -78,7 +79,7 @@ def net_issue():
     net = ps.net_io_counters()
     bytes_sent = '{0:.2f} MB'.format(net.bytes_sent / 1024 / 1024)
     bytes_recv = '{0:.2f} MB'.format(net.bytes_recv / 1024 / 1024)
-    print(f"\tnet_recv：{bytes_recv}, net_send {bytes_sent}")
+    print(f"\tnet_recv：{bytes_recv}, net_send: {bytes_sent}")
 
 
 def main():
