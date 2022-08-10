@@ -1,11 +1,10 @@
 {
-  "title": "",
-  "host": "1",
-  "sender": "1",
-  "port": "1",
-  "password": "1",
+  "title": "MAIL UU",
+  "host": "smtp.qiye.aliyun.com",
+  "sender": "mail@istudyforever.cn",
+  "port": 465,
+  "password": "",
   "receivers": [
-    "2",
-    "2"
+    ""
   ]
 }

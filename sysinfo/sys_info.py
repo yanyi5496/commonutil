@@ -47,9 +47,9 @@ def disk_issue():
 
 def io_issue():
     print("Disk I/O Info：")
-    io_counter = ps.disk_io_counters(perdisk=True)
-    for i in io_counter.keys():
-        io_counter = io_counter.get(i)
+    counter = ps.disk_io_counters(perdisk=True)
+    for i in counter.keys():
+        io_counter = counter.get(i)
         io_r_count = io_counter.read_count
         io_w_count = io_counter.write_count
         io_r_bytes = '{0:.2f} MB'.format(io_counter.read_bytes / 1024 / 1024)
